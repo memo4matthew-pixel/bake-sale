@@ -32,6 +32,9 @@ export default async function handler(req, res) {
           it.price = number(b.price, { min: 0, max: 1000, label: 'Price' });
           return;
         }
+        case 'clearItems':
+          s.items = [];
+          return;
         case 'deleteItem':
           findItem(s, b.id);
           s.items = s.items.filter((x) => x.id !== b.id);

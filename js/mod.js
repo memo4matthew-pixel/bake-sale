@@ -65,6 +65,10 @@ $('#totalForm').addEventListener('submit', (e) => {
   run({ action: 'setTotal', total: $('#total').value }, 'Total updated');
 });
 
+$('#clearItems').addEventListener('click', () => {
+  if (!window.confirm('Remove every item from the bake sale? This can\'t be undone. The money total and volunteers stay the same.')) return;
+  run({ action: 'clearItems' }, 'All items cleared');
+});
 $('#reload').addEventListener('click', () => run({ action: 'login' }, 'Refreshed'));
 
 $('#items').addEventListener('click', (e) => {
