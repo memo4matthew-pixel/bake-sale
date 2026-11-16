@@ -195,3 +195,5 @@ table.edit .money-in input { padding-left: 22px; }
 @media (max-width: 760px) { .period { grid-template-columns: 1fr; } }
 nav.tabs a.mod-link { color: var(--gold-2); }
 nav.tabs a.mod-link:hover { color: var(--navy); background: var(--gold-2); }
+.add-form.two { grid-template-columns: 1fr 130px; }
+@media (max-width: 480px) { .add-form.two { grid-template-columns: 1fr 1fr; } }

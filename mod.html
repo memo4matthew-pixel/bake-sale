@@ -52,11 +52,10 @@
 
       <section class="card">
         <h2>Money collected</h2>
-        <p class="sub">Currently stored: <b id="curTotal">$0.00</b>. Sales tracked by the − buttons add up to <b id="calcTotal">$0.00</b>.</p>
+        <p class="sub">Currently showing on the progress bar: <b id="curTotal">$0.00</b>. Only moderators can change this.</p>
         <form id="totalForm" class="actions" style="margin-top:0;align-items:flex-end">
-          <div class="field" style="width:180px"><label for="total">Override total</label><div class="money-in"><input id="total" type="number" min="0" step="0.01" required></div></div>
+          <div class="field" style="width:180px"><label for="total">Money made</label><div class="money-in"><input id="total" type="number" min="0" step="0.01" required></div></div>
           <button class="btn gold" type="submit">Set total</button>
-          <button class="btn ghost" type="button" id="recalc">Recalculate from sales</button>
         </form>
       </section>
 
@@ -65,10 +64,9 @@
           <h2>Items</h2>
           <button class="btn ghost small" id="reload" type="button">↻ Refresh</button>
         </div>
-        <div class="note">Changing “Sold” fixes the count shown on the − button. It doesn't change the money total; use the override or recalculate above for that.</div>
         <div class="table-wrap">
           <table class="edit">
-            <thead><tr><th>Item</th><th style="width:110px">Price</th><th style="width:90px">Left</th><th style="width:90px">Sold</th><th></th></tr></thead>
+            <thead><tr><th>Item</th><th style="width:110px">Price</th><th></th></tr></thead>
             <tbody id="items"></tbody>
           </table>
         </div>

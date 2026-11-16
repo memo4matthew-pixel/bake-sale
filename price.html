@@ -50,10 +50,9 @@
       <section class="card">
         <h2>Add an item</h2>
         <p class="sub">Type the baked good on one side and its price on the other.</p>
-        <form id="addForm" class="add-form" autocomplete="off">
+        <form id="addForm" class="add-form two" autocomplete="off">
           <div class="wide"><label for="name">Item</label><input id="name" type="text" maxlength="60" placeholder="Chocolate chip cookie" required></div>
           <div><label for="price">Price</label><div class="money-in"><input id="price" type="number" min="0" max="1000" step="0.01" placeholder="1.00" required></div></div>
-          <div><label for="stock">How many</label><input id="stock" type="number" min="0" max="5000" step="1" placeholder="24" required></div>
         </form>
         <div class="actions">
           <button class="btn gold" form="addForm" type="submit">＋ Add item</button>
@@ -69,11 +68,6 @@
       </section>
     </div>
 
-    <section class="card">
-      <h2>Stock left</h2>
-      <p class="sub">Press <b>−</b> each time one sells. The money goes straight into the progress bar.</p>
-      <div class="stock" id="stockList"><div class="empty">Loading…</div></div>
-    </section>
   </main>
   <footer>Speech &amp; Debate Bake Sale</footer>
 

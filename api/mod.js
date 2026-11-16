@@ -26,15 +26,10 @@ export default async function handler(req, res) {
         case 'setTotal':
           s.total = number(b.total, { min: 0, max: 100000, label: 'Money total' });
           return;
-        case 'recalcTotal':
-          s.total = Math.round(s.items.reduce((sum, it) => sum + it.sold * it.price, 0) * 100) / 100;
-          return;
         case 'setItem': {
           const it = findItem(s, b.id);
           it.name = text(b.name, 60, 'Item name');
           it.price = number(b.price, { min: 0, max: 1000, label: 'Price' });
-          it.stock = number(b.stock, { min: 0, max: 5000, int: true, label: 'Left in stock' });
-          it.sold = number(b.sold, { min: 0, max: 5000, int: true, label: 'Sold' });
           return;
         }
         case 'deleteItem':
