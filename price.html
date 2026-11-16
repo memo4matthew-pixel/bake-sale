@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prices · Speech &amp; Debate Bake Sale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧁</text></svg>">
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand">
+        <div class="brand-mark">🧁</div>
+        <div><small>Speech &amp; Debate</small><h1>Bake Sale</h1></div>
+      </div>
+      <nav class="tabs">
+        <a href="/price" class="active">Items &amp; Prices</a>
+        <a href="/time">Timetable</a>
+        <a href="/mod" class="mod-link">🔑 Mod</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="card progress-card">
+      <div class="progress-head">
+        <h2>Fundraising progress</h2>
+        <div class="raised" id="raised">$0.00 <span id="goalText">of $0 goal</span></div>
+      </div>
+      <div class="bar"><div id="bar"></div></div>
+      <div class="progress-foot"><span id="pct">0%</span><span id="toGo"></span></div>
+    </section>
+
+    <div class="info">
+      <div class="card">
+        <div class="icon">📅</div>
+        <div><div class="label">Bake sale date</div><div class="value" id="date">Loading…</div></div>
+      </div>
+      <div class="card">
+        <div class="icon">🔒</div>
+        <div><div class="label">Lockbox code</div><div class="code" id="lockbox">···</div></div>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-top:18px">
+      <section class="card">
+        <h2>Add an item</h2>
+        <p class="sub">Type the baked good on one side and its price on the other.</p>
+        <form id="addForm" class="add-form" autocomplete="off">
+          <div class="wide"><label for="name">Item</label><input id="name" type="text" maxlength="60" placeholder="Chocolate chip cookie" required></div>
+          <div><label for="price">Price</label><div class="money-in"><input id="price" type="number" min="0" max="1000" step="0.01" placeholder="1.00" required></div></div>
+          <div><label for="stock">How many</label><input id="stock" type="number" min="0" max="5000" step="1" placeholder="24" required></div>
+        </form>
+        <div class="actions">
+          <button class="btn gold" form="addForm" type="submit">＋ Add item</button>
+          <button class="btn ghost" id="undo" type="button" disabled>↶ Undo</button>
+        </div>
+        <p class="sub" style="margin-top:10px;margin-bottom:0;font-size:.82rem">Undo removes the last item you added from this device.</p>
+      </section>
+
+      <section class="card">
+        <h2>Menu</h2>
+        <p class="sub">Everything on the table and what it costs.</p>
+        <ul class="menu" id="menu"><li class="empty">Loading…</li></ul>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>Stock left</h2>
+      <p class="sub">Press <b>−</b> each time one sells. The money goes straight into the progress bar.</p>
+      <div class="stock" id="stockList"><div class="empty">Loading…</div></div>
+    </section>
+  </main>
+  <footer>Speech &amp; Debate Bake Sale</footer>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/price.js"></script>
+</body>
+</html>

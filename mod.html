@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Moderator · Speech &amp; Debate Bake Sale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔑</text></svg>">
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand">
+        <div class="brand-mark">🔑</div>
+        <div><small>Speech &amp; Debate Bake Sale</small><h1>Moderator</h1></div>
+      </div>
+      <nav class="tabs">
+        <a href="/price">Items &amp; Prices</a>
+        <a href="/time">Timetable</a>
+        <a href="/mod" class="active">Mod</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="card login" id="loginCard">
+      <h2>Moderator login</h2>
+      <p class="sub">Enter the moderator password to edit the bake sale.</p>
+      <form id="loginForm">
+        <div class="field"><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" required></div>
+        <button class="btn gold" type="submit" style="width:100%">Unlock</button>
+      </form>
+    </section>
+
+    <div id="panel" hidden>
+      <section class="card">
+        <h2>Bake sale details</h2>
+        <p class="sub">Shown at the top of the prices page.</p>
+        <form id="infoForm">
+          <div class="fields">
+            <div class="field"><label for="date">Date</label><input id="date" type="date"></div>
+            <div class="field"><label for="lockbox">Lockbox code</label><input id="lockbox" type="text" maxlength="20" required></div>
+            <div class="field"><label for="goal">Money goal</label><div class="money-in"><input id="goal" type="number" min="1" step="0.01" required></div></div>
+          </div>
+          <div class="actions"><button class="btn" type="submit">Save details</button></div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Money collected</h2>
+        <p class="sub">Currently stored: <b id="curTotal">$0.00</b>. Sales tracked by the − buttons add up to <b id="calcTotal">$0.00</b>.</p>
+        <form id="totalForm" class="actions" style="margin-top:0;align-items:flex-end">
+          <div class="field" style="width:180px"><label for="total">Override total</label><div class="money-in"><input id="total" type="number" min="0" step="0.01" required></div></div>
+          <button class="btn gold" type="submit">Set total</button>
+          <button class="btn ghost" type="button" id="recalc">Recalculate from sales</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="actions" style="justify-content:space-between;margin:0 0 6px">
+          <h2>Items</h2>
+          <button class="btn ghost small" id="reload" type="button">↻ Refresh</button>
+        </div>
+        <div class="note">Changing “Sold” fixes the count shown on the − button. It doesn't change the money total; use the override or recalculate above for that.</div>
+        <div class="table-wrap">
+          <table class="edit">
+            <thead><tr><th>Item</th><th style="width:110px">Price</th><th style="width:90px">Left</th><th style="width:90px">Sold</th><th></th></tr></thead>
+            <tbody id="items"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Volunteers</h2>
+        <p class="sub">Remove a name from any period.</p>
+        <div class="periods" id="vols"></div>
+      </section>
+
+      <div class="actions" style="justify-content:center;margin-top:18px">
+        <button class="btn danger" id="logout" type="button">Log out</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/mod.js"></script>
+</body>
+</html>
